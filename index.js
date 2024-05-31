@@ -1,10 +1,11 @@
 const calcKeysContainer = document.querySelector('.calculator-keys');
 const display = document.querySelector('#calculator-screen');
+display.value = '0'
 
 calcKeysContainer.addEventListener('click', (event) => {
     console.log(event.target.classList)
     if (event.target.classList.contains('all-clear')) {
-        display.value = '';
+        display.value = '0';
         return;
     }
 
@@ -13,5 +14,5 @@ calcKeysContainer.addEventListener('click', (event) => {
         return;
     }
 
-    display.value += event.target.value;
+    display.value === '0' ? display.value = event.target.value : display.value += event.target.value;
 });
